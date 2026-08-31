@@ -1,0 +1,37 @@
+name: Propuesta o defecto
+description: Reporta un problema o propone una mejora para OpenBank API.
+title: "[Issue]: "
+labels: [triage]
+body:
+  - type: markdown
+    attributes:
+      value: No incluyas secretos, cuentas ni datos reales.
+  - type: dropdown
+    id: type
+    attributes:
+      label: Tipo
+      options: [Defecto, Nueva funcionalidad, Mejora técnica, Documentación]
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      description: Explica comportamiento actual, esperado e impacto.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproducción o propuesta
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Verificación
+      options:
+        - label: Confirmo que no incluí secretos ni datos reales.
+          required: true
+        - label: Busqué issues existentes.
+          required: true
