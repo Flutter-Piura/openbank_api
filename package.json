@@ -1,0 +1,54 @@
+{
+  "name": "openbank-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Backend bancario educativo y open source de Flutter Piura",
+  "license": "MIT",
+  "engines": {
+    "node": "22.23.2"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/main.js",
+    "start:dev": "tsx watch src/main.ts",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "tsx --test test/unit/**/*.test.ts",
+    "test:e2e": "tsx --test test/e2e/**/*.test.ts",
+    "test:coverage": "tsx --test --experimental-test-coverage test/unit/**/*.test.ts",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "quality": "npm run format:check && npm run lint && npm run build && npm test"
+  },
+  "dependencies": {
+    "@nestjs/common": "12.0.1",
+    "@nestjs/config": "12.0.0",
+    "@nestjs/core": "12.0.1",
+    "@nestjs/jwt": "12.0.1",
+    "@nestjs/platform-express": "12.0.1",
+    "bcryptjs": "3.0.3",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.15.1",
+    "helmet": "8.3.0",
+    "pg": "8.23.0",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@nestjs/testing": "12.0.1",
+    "@types/express": "5.0.6",
+    "@types/node": "26.4.0",
+    "@types/pg": "8.23.1",
+    "@types/supertest": "7.2.1",
+    "eslint": "10.9.1",
+    "prettier": "3.9.6",
+    "supertest": "7.2.2",
+    "tsx": "4.23.13",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.68.0"
+  },
+  "overrides": {
+    "multer": "2.3.0"
+  }
+}
